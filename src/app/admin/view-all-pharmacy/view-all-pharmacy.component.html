@@ -1,0 +1,48 @@
+<div class="row" style="width: 100.81%;">
+    <aside class="col-lg-3" style="width: 335px;">
+        <admin-pharmacie-sidebar></admin-pharmacie-sidebar>
+    </aside>
+    <main class="col-lg-9" style="min-height: 100vh;">
+
+        
+
+        
+        
+        
+        <hr style="color: white;width: 50%;margin-left:25% !important; margin-right:25% !important;" />
+        <h2 class="text-center" style="color: white;">All Pharmacie</h2>
+        <table class="table table-bordered" *ngIf="pharmacys.length > 0">
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Name Pharmacie</th>
+                <th scope="col">Categorie</th>
+                <th scope="col">Type</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col center">Adresse</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pharmacy of pharmacys; let i = index" >
+                  
+                  <td>{{pharmacy.pharmName}}</td>
+                  <td>{{pharmacy.pharmCategory}}</td>
+                  <td>{{pharmacy.type}}</td>
+                  <td>{{pharmacy.mobileNo}}</td>
+                  <td>{{pharmacy.email}}</td>
+                  <td>{{pharmacy.currentAdress}}</td>
+                  <td class="text-center edit-block">
+                    <span class="edit" [routerLink]="['/admin/updatepharmacy', pharmacy._id]">
+                      <button type="button" class="btn btn-success btn-sm">Edit</button>
+                    </span>
+                    <span class="delete" (click)="removePharmacy(pharmacy.noPh,pharmacy._id)">
+                      <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+        </table>
+
+        
+     
+        

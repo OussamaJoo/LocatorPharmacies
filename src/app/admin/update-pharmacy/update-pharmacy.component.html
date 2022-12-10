@@ -1,0 +1,97 @@
+<div class="row" style="width: 100.81%;">
+    <aside class="col-lg-3" style="width: 335px;">
+        <admin-pharmacie-sidebar></admin-pharmacie-sidebar>
+    </aside>
+    <main class="col-lg-9" style="min-height: 100vh;">
+
+
+
+          
+<!-- Modal -->
+
+    
+   
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #d2cece94;">
+            <h1 class="modal-title m-0" id="exampleModalLongTitle" style="font-family: serif;"  >Pharm No:{{getNo()}}</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body" style="background-color: #152733 !important;">
+    <div class="form-body">
+        
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content" style="padding: 0;">
+                    <div class="form-items" style="padding: 10px 17px;">
+                        <form class="requires-validation" [formGroup]="pharmacyDetails" (ngSubmit)="modifier()">
+
+                            <div class="row mx-1">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="type"  formControlName="type" style="background-color: #989898;" >
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="pharmCategory" formControlName="pharmCategory"  style="background-color: #989898;" >
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="pharmacyDetails" style="margin-top:16px;margin-bottom:0px"><span>pharmacy Details :</span></label>
+                            </div>
+                            
+                            <div class="row mx-1">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="pharmName"  formControlName="pharmName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="firstName"  formControlName="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="lastName" formControlName="lastName"  required>
+                                </div>
+                                <div class="col-md-6">
+                                <input class="form-control" type="text" name="_id" formControlName="_id"  required>
+                                </div>
+
+                            </div>
+
+                            <div class="row mx-1">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="number" name="mobileNo" formControlName="mobileNo"  required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="noPh" formControlName="noPh"  required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" formControlName="email"  required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="addressDetails" style="margin-top:16px;margin-bottom:0px"><span>Address Details :</span></label>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" rows="2" cols="50" name="currentAdress" formControlName="currentAdress" required> </textarea>
+                            </div>
+
+
+
+                            <div class="col-md-12 mt-3 d-flex justify-content-between">
+                                
+                                <button id="updatesubmit" type="submit"  class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+

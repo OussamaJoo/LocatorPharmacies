@@ -1,0 +1,100 @@
+
+<div class="col-lg-12 p-0 mt-5">
+    <div class="div-box">
+        <h3 class="room-title"><strong>Parapharmacies</strong></h3>
+    </div>
+</div>
+
+<hr style="color: white;width: 50%;margin-left:25% !important; margin-right:25% !important;" />
+
+<hr style="color: white;width: 50%;margin-left:25% !important; margin-right:25% !important;" />
+
+
+<div class="row mx-3">
+   
+    <form class="form-inline my-3" [formGroup]="AdressSearch">
+        <div class="input-group">
+        <input type="text" id="rNo" name="rNo" formControlName="rNo" class="form-control bg-light" placeholder="Search Adress" aria-label="Search" aria-describedby="basic-addon2"  required>
+        <div class="input-group-append">
+            <button (click)="searchAdress()" class="btn btn-primary" type="button">
+                <i class="fas fa-search fa-sm"></i>
+            </button>
+        </div>
+        </div>
+    </form>
+
+    <span *ngIf="searchIsDone == true">
+        <h1 style="color: white;">Your Search Result</h1>
+        <div class="row">
+            <div *ngFor="let pharmacy of this.searchPharmacie" class="col-md-2">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                         <span class="fa-stack">
+                             <strong class="fa-stack-2x">
+                               {{pharmacy.noPh}}
+                             </strong>
+
+                         </span>
+                    </div>
+                    <br>
+            <p>Nom: {{pharmacy.pharmName}}</p>
+            <p>Telephone: {{pharmacy.mobileNo}}</p>
+            <p>Email: {{pharmacy.email}}</p>
+            <p>Adresse: {{pharmacy.currentAdress}}</p>
+            <div class="table">
+                <div class="ftr" style="border-top: none;">
+                    <a href={{pharmacy.maps}}>
+                    <button type="button"  class="btn p-0" data-toggle="modal">
+   
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                    </button>
+                   </a>
+
+                </div>
+           </div>
+                 </div>
+            </div>
+        </div>
+        <div *ngIf="!this.searchPharmacie.length" class="alert alert-info mx-2" role="alert" style="width: 400px;">
+            {{searchmsg}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <button class="btn btn-primary" (click)="searchIsDone = false">View All Pharmacies</button>
+    </span>
+
+    <span *ngIf="searchIsDone == false">
+       
+        <div class="row">
+            <hr style="color: white;width: 50%;margin-left:25% !important; margin-right:25% !important;" />
+    <div *ngFor="let pharmacy of pharmacys"  class="col-md-2">
+        <div class="card card-profile">
+            <div class="card-avatar">
+                 <span class="fa-stack">
+                     <strong class="fa-stack-2x">
+                       {{pharmacy.noPh}}
+                     </strong>
+                 </span>
+               
+            </div>
+            <br>
+            <p>Nom: {{pharmacy.pharmName}}</p>
+            <p>Telephone: {{pharmacy.mobileNo}}</p>
+            <p>Email: {{pharmacy.email}}</p>
+            <p>Adresse: {{pharmacy.currentAdress}}</p>
+            <div class="table">
+                 <div class="ftr" style="border-top: none;">
+                     <a href={{pharmacy.maps}}>
+                     <button type="button"  class="btn p-0" data-toggle="modal">
+    
+                         <i class="fas fa-arrow-alt-circle-right"></i>
+                     </button>
+                    </a>
+
+                 </div>
+            </div>
+         </div>
+    </div>
+</div>
+</span>

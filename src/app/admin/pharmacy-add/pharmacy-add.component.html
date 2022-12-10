@@ -1,0 +1,91 @@
+<div class="row" style="width: 100.81%;">
+    <aside class="col-lg-3" style="width: 335px;">
+        <admin-pharmacie-sidebar></admin-pharmacie-sidebar>
+    </aside>
+    <main class="col-lg-9" style="min-height: 100vh;">
+
+        <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <h3>Add Pharmacy Details</h3>
+                            <p>Fill in the data below.</p>
+                            <form class="requires-validation" novalidate [formGroup]="pharmacyDetails">
+
+                               
+
+                                <div class="col-md-12 mt-3">
+                                    <label class="mb-3 mr-1" for="type">Type: </label>
+
+                                    <input type="radio" class="btn-check" name="type" id="pharmacie" formControlName="type" (change)="typeOrPharmCatSelected()" value="Pharmacie" autocomplete="off" required>
+                                    <label class="btn btn-sm btn-outline-secondary" for="pharmacie">pharmacie</label>
+
+                                    <input type="radio" class="btn-check" name="type" id="parapharmacie" formControlName="type" (change)="typeOrPharmCatSelected()" value="Parapharmacie" autocomplete="off" required>
+                                    <label class="btn btn-sm btn-outline-secondary" for="parapharmacie">parapharmacie</label>
+
+                                </div>
+
+                                
+
+                                <div class="col-md-12">
+                                    <select class="form-select mt-3" name="pharmCategory" formControlName="pharmCategory" (change)="typeOrPharmCatSelected()" required>
+                                          <option selected disabled value="">Pharmacy Category</option>
+                                          <option value="Day">Day</option>
+                                          <option value="Night">Night</option>
+                                        
+                                   </select>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="noPh" formControlName="noPh" placeholder="Pharm no" required>
+                                 </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="pharmName" formControlName="pharmName" placeholder="Pharm Name" required>
+                                 </div>
+                                <div class="col-md-12">
+                                   <input class="form-control" type="text" name="firstName" formControlName="firstName" placeholder="First Name" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="lastName" formControlName="lastName" placeholder="Last Name" required>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <input class="form-control" type="number" name="mobileNo" formControlName="mobileNo" placeholder="Mobile Number" required>
+                                </div>
+                                <div class="col-md-12 text-right" *ngIf="mobileNo!==null && mobileNo.invalid"><small style="color:red;">please enter valid mobile number</small></div> 
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="email" name="email" formControlName="email" placeholder="E-mail Address" required>
+                                </div>
+                                <div class="col-md-12 text-right" *ngIf="email!==null && email.invalid"><small style="color:red;">please enter valid Email</small></div> 
+                                
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="maps" formControlName="maps" placeholder="Maps" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="currentAdress" formControlName="currentAdress" placeholder="Current Address" required>
+                                </div>
+    
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required checked>
+                                    <label class="form-check-label">I confirm that all data are correct</label>
+                                </div>
+                      
+    
+                                <div class="form-button mt-3">
+                                    <button id="submit" type="submit" (click)="addPharmacy()" class="btn btn-primary">Register</button>
+                                </div>
+                         
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
