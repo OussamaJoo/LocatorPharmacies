@@ -8,12 +8,35 @@ pipeline {
                 sh 'docker-compose version'
             }
             }
+            stage('Code Analysis') {
+              steps {
+                script {
+                  def scannerHome = tool 'sonarqube';
+                      withSonarQubeEnv("sonarqube") {
+                      sh "${tool("sonarqube")}/bin/sonar-scanner"
+                      }
+                }
+              }
+            }
           stage('test') {
             steps {
                 sh 'docker ps'
                 sh 'docker-compose version'
             }
             }
+           stage('build_images') {
+            steps {
+                sh 'docker ps'
+               
+            }
+            }
+           stage('push_images') {
+            steps {
+                sh 'docker ps'
+               
+            }
+            } 
+            
             stage('deploy') {
             steps {
                 sh 'docker ps'
