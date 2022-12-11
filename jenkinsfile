@@ -42,14 +42,14 @@ pipeline {
             
             stage('deploy') {
             steps {
-                sh 'docker ps'
-                sh 'docker-compose version'
+                sh 'docker-compose down'
+                sh 'docker-compose up -d'
             }
             }
             stage('E2E_test') {
             steps {
-                sh 'docker ps'
-                sh 'docker-compose version'
+                echo "E2E Test"
+                
             }
         }
     }
