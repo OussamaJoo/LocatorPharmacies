@@ -14,4 +14,4 @@ COPY --chown=node:node . .
 
 EXPOSE 4050
 
-CMD [ "node", "server.js" ]
+CMD [ "npm", "run", "server" ]
