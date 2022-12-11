@@ -12,13 +12,13 @@ pipeline {
             stage('Code Analysis') {
               steps {
               echo "Code Analysis"
-             /*   script {
+                script {
                   def scannerHome = tool 'sonarqube';
                       withSonarQubeEnv("sonarqube") {
                       sh "${tool("sonarqube")}/bin/sonar-scanner -Dsonar.projectKey=LocatorPharmacies"
                       }
                 }
-                */
+                
               }
             }
           stage('test') {
