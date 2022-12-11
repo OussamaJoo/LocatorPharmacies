@@ -2,9 +2,9 @@
 pipeline {
     agent {label 'slave01'}
     stages {
-        stage('build') {
+        stage('prepareDependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm install --legacy-peer-deps'
           
             }
             }
