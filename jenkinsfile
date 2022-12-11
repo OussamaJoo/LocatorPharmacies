@@ -4,18 +4,21 @@ pipeline {
     stages {
         stage('prepareDependencies') {
             steps {
-                sh 'npm install --legacy-peer-deps'
+                echo "PrepareDependencies"
+              /*  sh 'npm install --legacy-peer-deps' */
           
             }
             }
             stage('Code Analysis') {
               steps {
-                script {
+              echo "Code Analysis"
+             /*   script {
                   def scannerHome = tool 'sonarqube';
                       withSonarQubeEnv("sonarqube") {
                       sh "${tool("sonarqube")}/bin/sonar-scanner -Dsonar.projectKey=LocatorPharmacies"
                       }
                 }
+                */
               }
             }
           stage('test') {
