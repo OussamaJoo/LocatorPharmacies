@@ -6,12 +6,14 @@ WORKDIR /home/node/app
 
 USER node
 
-COPY --chown=node:node package*.json ./
-
-RUN npm install  --legacy-peer-deps
+COPY --chown=node:node package.json .
+ENV NODE_ENV=development
 
 COPY --chown=node:node . .
-
+RUN npm install  --legacy-peer-deps --save-dev
+RUN npm install ng
 EXPOSE 4200
+
+#CMD [ "npm", "start" ]
 
 CMD [ "ng", "serve", "-o" ]
