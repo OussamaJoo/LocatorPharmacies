@@ -5,10 +5,10 @@ services:
       context: .
       dockerfile: front.Dockerfile
     ports : 
-     - "4200:4200"
+      - 4200:4200
   back:
     build:
       context: .
       dockerfile: back.Dockerfile
     ports:
-    - "4050:4050"
+      - 4050:4050
