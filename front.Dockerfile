@@ -16,4 +16,4 @@ EXPOSE 4200
 
 #CMD [ "npm", "start" ]
 
-CMD [ "ng", "serve", "-o" ]
+CMD [ "ng", "serve", "--host=0.0.0.0", "--disable-host-check" ]
