@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker ps'
-                sh 'docker-compose version'
+                sh 'npm install'
+          
             }
             }
             stage('Code Analysis') {
@@ -20,13 +20,12 @@ pipeline {
             }
           stage('test') {
             steps {
-                sh 'docker ps'
-                sh 'docker-compose version'
+                sh 'node test'
             }
             }
            stage('build_images') {
             steps {
-                sh 'docker ps'
+                sh 'docker-compose -f docker-compose.yml ps'
                
             }
             }
