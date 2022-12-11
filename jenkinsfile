@@ -20,7 +20,7 @@ pipeline {
             }
           stage('test') {
             steps {
-                sh 'node test'
+                sh 'npm run test'
             }
             }
            stage('build_images') {
