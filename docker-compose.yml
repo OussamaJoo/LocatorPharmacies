@@ -2,7 +2,7 @@ version: "3"
 services:
   front:
     build: ./front
-    port : 
+    ports : 
      - "4200:80"
   back:
     build: ./back
